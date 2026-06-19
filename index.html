@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moe Satra — IT Specialist</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.hero { min-height: calc(100vh - 80px); display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -150px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(26,86,219,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--blue-light);
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 32px; height: 1px;
+  background: var(--blue-light);
+}
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  color: var(--gold);
+}
+.hero h1 span { color: var(--gold-light); }
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+.hero-certs { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem; }
+.cert-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 12px;
+  border: 1px solid var(--border-gold);
+  border-radius: 2px;
+  color: var(--gold-dim);
+  letter-spacing: 0.06em;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 4rem;
+}
+.stat { background: var(--bg2); padding: 1.75rem 1.25rem; text-align: center; }
+.stat-num {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.stat-label { font-size: 11px; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">moe@portfolio:~$</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="hero">
+    <div class="hero-eyebrow">Available for IT & Sysadmin Roles</div>
+    <h1>Moe Satra<br><span>IT Specialist.</span></h1>
+    <p class="hero-sub">4+ years managing enterprise infrastructure across a multi-site university. Endpoint management, M365 administration, automation, and keeping things running at scale.</p>
+    <div class="hero-certs">
+      <span class="cert-badge">MD-102 Endpoint Management</span>
+      <span class="cert-badge">SC-900 Security & Identity</span>
+      <span class="cert-badge">B.Sc. Computer Science (Honours)</span>
+    </div>
+    <div class="hero-actions">
+      <a href="projects.html" class="btn-primary">View Projects</a>
+      <a href="contact.html" class="btn-ghost">Get in Touch</a>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="terminal-title">powershell — moe@algoma</span>
+      </div>
+      <div class="terminal-body">
+        <p><span class="t-prompt">PS C:\&gt;</span> <span class="t-cmd">Get-Profile -User "moe.satra"</span></p>
+        <p><span class="t-output">&nbsp;</span></p>
+        <p><span class="t-output">Role         : </span><span class="t-val">IT Specialist</span></p>
+        <p><span class="t-output">Org          : </span><span class="t-val">Algoma University</span></p>
+        <p><span class="t-output">Users        : </span><span class="t-val">2,000+</span></p>
+        <p><span class="t-output">Endpoints    : </span><span class="t-val">300+ (Intune + Autopilot)</span></p>
+        <p><span class="t-output">SLA          : </span><span class="t-val">90%+ compliance</span></p>
+        <p><span class="t-output">Certs        : </span><span class="t-val">MD-102, SC-900</span></p>
+        <p><span class="t-output">&nbsp;</span></p>
+        <p><span class="t-prompt">PS C:\&gt;</span> <span class="t-cursor"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat"><div class="stat-num">4+</div><div class="stat-label">Years Experience</div></div>
+    <div class="stat"><div class="stat-num">2K+</div><div class="stat-label">Users Supported</div></div>
+    <div class="stat"><div class="stat-num">300+</div><div class="stat-label">Endpoints Managed</div></div>
+    <div class="stat"><div class="stat-num">90%+</div><div class="stat-label">SLA Compliance</div></div>
+    <div class="stat"><div class="stat-num">25%</div><div class="stat-label">Faster Deployment</div></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Moe Satra</p>
+  <p>Built with HTML · Hosted on GitHub Pages</p>
+</footer>
+</body>
+</html>
