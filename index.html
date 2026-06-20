@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moe Satra — IT Specialist</title>
+<link rel="stylesheet" href="style.css">
+<style>
+
+/* ── LOADER ───────────────────────────────────────── */
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #0F172A;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: #64748B;
+  letter-spacing: 0.12em;
+  margin-bottom: 3.5rem;
+}
+.loader-logo span { color: #2563EB; }
+
+.loader-name {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #F8FAFB;
+  line-height: 1;
+  margin-bottom: 0.25em;
+}
+.loader-name .blue { color: #2563EB; }
+
+.loader-role {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #475569;
+  letter-spacing: 0.02em;
+  margin-bottom: 4rem;
+}
+
+.loader-bar-wrap {
+  width: min(440px, 80vw);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.loader-bar-track {
+  width: 100%;
+  height: 2px;
+  background: #1E293B;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.loader-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: #2563EB;
+  border-radius: 2px;
+  transition: width 0.05s linear;
+  box-shadow: 0 0 8px rgba(37,99,235,0.6);
+}
+.loader-bar-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.loader-pct {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: #2563EB;
+  font-weight: 500;
+}
+.loader-status {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #334155;
+  letter-spacing: 0.05em;
+}
+
+/* ── HERO ─────────────────────────────────────────── */
+.hero-wrap {
+  min-height: calc(100vh - 68px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 80px 0 60px;
+}
+.dot-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, #CBD5E1 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 80% 70% at 60% 40%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 60% 40%, black 30%, transparent 100%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-3);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 2.25rem;
+  width: fit-content;
+  box-shadow: var(--shadow);
+}
+.status-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #22C55E;
+  box-shadow: 0 0 0 2px #DCFCE7;
+  animation: pulse-green 2s ease-in-out infinite;
+}
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 2px #DCFCE7; }
+  50% { box-shadow: 0 0 0 4px #DCFCE7; }
+}
+.hero-name {
+  font-size: clamp(4rem, 10vw, 7.5rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--ink);
+  margin-bottom: 0.35em;
+}
+.hero-name .blue { color: var(--blue); }
+.hero-role {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 400;
+  color: var(--ink-3);
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+.hero-role strong { color: var(--ink-2); font-weight: 600; }
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--ink-3);
+  max-width: 540px;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+.hero-certs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2.75rem;
+}
+.cert-chip {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-3);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+}
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* STATS */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 5rem;
+}
+.stat-cell { background: var(--bg-card); padding: 2rem 1.5rem; text-align: center; }
+.stat-num { font-size: 2rem; font-weight: 800; letter-spacing: -0.04em; color: var(--blue); line-height: 1; margin-bottom: 6px; }
+.stat-lbl { font-size: 12px; color: var(--ink-4); font-weight: 500; letter-spacing: 0.01em; line-height: 1.4; }
+
+@media (max-width: 760px) { .stats-row { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 480px) { .stats-row { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">moe<span>.satra</span> // portfolio</div>
+  <div class="loader-name">Moe <span class="blue">Satra</span></div>
+  <div class="loader-role">IT Specialist &amp; Systems Administrator</div>
+  <div class="loader-bar-wrap">
+    <div class="loader-bar-track">
+      <div class="loader-bar-fill" id="barFill"></div>
+    </div>
+    <div class="loader-bar-meta">
+      <span class="loader-pct" id="pctText">0%</span>
+      <span class="loader-status" id="statusText">initializing...</span>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">moe.satra</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="page-inner">
+    <div class="hero-wrap">
+      <div class="dot-grid"></div>
+      <div class="hero-status">
+        <span class="status-dot"></span>
+        Open to IT &amp; Sysadmin roles · Toronto, ON
+      </div>
+      <h1 class="hero-name">Moe<br><span class="blue">Satra.</span></h1>
+      <p class="hero-role"><strong>IT Specialist</strong> &amp; Systems Administrator</p>
+      <p class="hero-desc">4+ years managing enterprise infrastructure across a multi-site university — endpoint management, M365 administration, and building tools that keep 2,000+ users running.</p>
+      <div class="hero-certs">
+        <span class="cert-chip">MD-102 · Endpoint Management</span>
+        <span class="cert-chip">SC-900 · Security &amp; Identity</span>
+        <span class="cert-chip">B.Sc. Computer Science (Honours)</span>
+      </div>
+      <div class="hero-actions">
+        <a href="about.html" class="btn btn-primary">About Me</a>
+        <a href="projects.html" class="btn btn-ghost">View Projects</a>
+        <a href="contact.html" class="btn btn-ghost">Contact</a>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-cell"><div class="stat-num">4+</div><div class="stat-lbl">Years Experience</div></div>
+      <div class="stat-cell"><div class="stat-num">2K+</div><div class="stat-lbl">Users Supported</div></div>
+      <div class="stat-cell"><div class="stat-num">300+</div><div class="stat-lbl">Endpoints Managed</div></div>
+      <div class="stat-cell"><div class="stat-num">90%+</div><div class="stat-lbl">SLA Compliance</div></div>
+      <div class="stat-cell"><div class="stat-num">25%</div><div class="stat-lbl">Faster Deployment</div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Moe Satra</p>
+
+</footer>
+
+<script>
+  const stages = [
+    { to: 15,  label: 'loading assets...',     dur: 300 },
+    { to: 35,  label: 'building interface...',  dur: 400 },
+    { to: 58,  label: 'fetching experience...', dur: 450 },
+    { to: 75,  label: 'loading projects...',    dur: 350 },
+    { to: 90,  label: 'finalising...',          dur: 300 },
+    { to: 100, label: 'ready.',                 dur: 250 },
+  ];
+
+  const barFill   = document.getElementById('barFill');
+  const pctText   = document.getElementById('pctText');
+  const statusText = document.getElementById('statusText');
+  const loader    = document.getElementById('loader');
+
+  let current = 0;
+
+  function animateTo(target, label, duration) {
+    return new Promise(resolve => {
+      statusText.textContent = label;
+      const start = current;
+      const startTime = performance.now();
+
+      function tick(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        const value = Math.round(start + (target - start) * eased);
+        current = value;
+        barFill.style.width = value + '%';
+        pctText.textContent = value + '%';
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          current = target;
+          resolve();
+        }
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
+  async function runLoader() {
+    // small pause before starting
+    await new Promise(r => setTimeout(r, 300));
+    for (const stage of stages) {
+      await animateTo(stage.to, stage.label, stage.dur);
+      await new Promise(r => setTimeout(r, 80));
+    }
+    // hold at 100% briefly then fade out
+    await new Promise(r => setTimeout(r, 420));
+    loader.classList.add('hidden');
+  }
+
+  runLoader();
+</script>
+</body>
+</html>

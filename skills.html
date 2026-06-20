@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills — Moe Satra</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.skill-group {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.skill-group:hover { box-shadow: var(--shadow-md); border-color: var(--border-2); }
+.skill-group-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--blue);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tag {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-2);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  border-radius: 6px;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.skill-tag:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+
+.platforms-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.platform-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 100px;
+  box-shadow: var(--shadow);
+}
+.platform-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">moe.satra</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html" class="active">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="page-inner">
+    <div class="eyebrow">Toolkit</div>
+    <h1 class="page-title">Skills</h1>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-label">Languages</div>
+        <div class="skill-tags">
+          <span class="skill-tag">PowerShell</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">Endpoint & MDM</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Microsoft Intune</span>
+          <span class="skill-tag">Windows Autopilot</span>
+          <span class="skill-tag">Entra ID</span>
+          <span class="skill-tag">BitLocker</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">Microsoft 365</div>
+        <div class="skill-tags">
+          <span class="skill-tag">M365 Admin</span>
+          <span class="skill-tag">Active Directory</span>
+          <span class="skill-tag">Azure AD</span>
+          <span class="skill-tag">Exchange</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">Systems & IT</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Windows Server</span>
+          <span class="skill-tag">Networking</span>
+          <span class="skill-tag">DNS / DHCP / VPN</span>
+          <span class="skill-tag">Hardware Support</span>
+          <span class="skill-tag">AV Support</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">ITSM & Process</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Freshworks</span>
+          <span class="skill-tag">ServiceNow</span>
+          <span class="skill-tag">SOP Authoring</span>
+          <span class="skill-tag">Incident Mgmt</span>
+          <span class="skill-tag">Onboarding / Offboarding</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">Dev & Automation</div>
+        <div class="skill-tags">
+          <span class="skill-tag">GitHub Actions</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">RBAC</span>
+          <span class="skill-tag">Scripting</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">Identity & Access</div>
+        <div class="skill-tags">
+          <span class="skill-tag">MFA Enforcement</span>
+          <span class="skill-tag">RBAC Provisioning</span>
+          <span class="skill-tag">Access Revocation</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">Asset & Vendor</div>
+        <div class="skill-tags">
+          <span class="skill-tag">IT Asset Inventory</span>
+          <span class="skill-tag">Lifecycle Planning</span>
+          <span class="skill-tag">Vendor Comms</span>
+          <span class="skill-tag">Software Licensing</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:3rem;">Platforms</div>
+    <div class="platforms-row">
+      <div class="platform-pill"><span class="platform-dot"></span>Windows</div>
+      <div class="platform-pill"><span class="platform-dot"></span>macOS</div>
+      <div class="platform-pill"><span class="platform-dot"></span>iOS / Android</div>
+      <div class="platform-pill"><span class="platform-dot"></span>Linux (basic)</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Moe Satra</p>
+
+</footer>
+</body>
+</html>

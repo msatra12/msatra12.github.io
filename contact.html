@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Moe Satra</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 4rem;
+  align-items: start;
+}
+.contact-intro {
+  font-size: 1.05rem;
+  color: var(--ink-2);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #166534;
+  background: #DCFCE7;
+  border: 1px solid #BBF7D0;
+  padding: 8px 16px;
+  border-radius: 100px;
+  margin-bottom: 2rem;
+}
+.avail-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #22C55E;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+.contact-links-list { display: flex; flex-direction: column; gap: 12px; }
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.4rem;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.15s, border-color 0.15s, transform 0.15s;
+}
+.contact-link:hover { box-shadow: var(--shadow-md); border-color: var(--blue); transform: translateX(4px); }
+.contact-link-icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+}
+.contact-link-body {}
+.contact-link-label { font-size: 11px; font-family: var(--font-mono); color: var(--ink-4); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 2px; }
+.contact-link-value { font-size: 14px; font-weight: 500; color: var(--ink-2); }
+.contact-link:hover .contact-link-value { color: var(--blue); }
+
+.location-note {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  color: var(--ink-3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.big-cta {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.big-cta h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 0.75rem; }
+.big-cta p { font-size: 15px; color: var(--ink-3); line-height: 1.7; margin-bottom: 2rem; }
+.big-cta .btn { width: 100%; justify-content: center; }
+
+@media (max-width: 860px) {
+  .contact-layout { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">moe.satra</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="page-inner">
+    <div class="eyebrow">Get in Touch</div>
+    <h1 class="page-title">Contact</h1>
+
+    <div class="contact-layout">
+      <div>
+        <div class="availability-badge">
+          <span class="avail-dot"></span>
+          Open to new opportunities
+        </div>
+
+        <p class="contact-intro">Looking for IT Specialist, Systems Administrator, or similar infrastructure roles. I bring real hands-on enterprise experience — not just coursework. Feel free to reach out and I'll get back to you promptly.</p>
+
+        <div class="contact-links-list">
+          <a href="mailto:satrablake5@gmail.com" class="contact-link">
+            <div class="contact-link-icon">✉️</div>
+            <div class="contact-link-body">
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-value">satrablake5@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/mohamed-satra-b9b0901b2/" target="_blank" class="contact-link">
+            <div class="contact-link-icon">💼</div>
+            <div class="contact-link-body">
+              <div class="contact-link-label">LinkedIn</div>
+              <div class="contact-link-value">linkedin.com/in/mohamed-satra-b9b0901b2</div>
+            </div>
+          </a>
+          <a href="https://github.com/moesatra" target="_blank" class="contact-link">
+            <div class="contact-link-icon">⌨️</div>
+            <div class="contact-link-body">
+              <div class="contact-link-label">GitHub</div>
+              <div class="contact-link-value">github.com/moesatra</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="location-note">
+          📍 Based in Toronto, ON &nbsp;·&nbsp; (647) 868-6832
+        </div>
+      </div>
+
+      <div class="big-cta">
+        <h2>Let's work together</h2>
+        <p>Whether you have a role to fill or just want to connect — my inbox is open.</p>
+        <a href="mailto:satrablake5@gmail.com" class="btn btn-primary">Send me an email</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Moe Satra</p>
+
+</footer>
+</body>
+</html>

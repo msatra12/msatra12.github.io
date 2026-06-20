@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #F8FAFB;
+  --bg-card:   #FFFFFF;
+  --bg-subtle: #F1F5F9;
+  --ink:       #0F172A;
+  --ink-2:     #334155;
+  --ink-3:     #64748B;
+  --ink-4:     #94A3B8;
+  --blue:      #2563EB;
+  --blue-light:#DBEAFE;
+  --amber:     #F59E0B;
+  --amber-light:#FEF3C7;
+  --border:    #E2E8F0;
+  --border-2:  #CBD5E1;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius:    10px;
+  --shadow:    0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
+  --shadow-md: 0 4px 16px rgba(15,23,42,0.08), 0 2px 6px rgba(15,23,42,0.05);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── NAV ─────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;
+  height: 68px;
+  background: rgba(248,250,251,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--blue);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.nav-links {
+  display: flex;
+  gap: 2px;
+  list-style: none;
+}
+.nav-links a {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-3);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 7px;
+  transition: color 0.15s, background 0.15s;
+  letter-spacing: -0.01em;
+}
+.nav-links a:hover { color: var(--ink); background: var(--bg-subtle); }
+.nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
+
+/* ── PAGE ─────────────────────────────────────────── */
+.page {
+  padding: 68px 5vw 0;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.page-inner {
+  padding-top: 72px;
+  padding-bottom: 80px;
+}
+
+/* ── SECTION LABELS ───────────────────────────────── */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--blue);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--blue-light);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+.page-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 2.5rem;
+}
+
+/* ── CARDS ────────────────────────────────────────── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 2.25rem;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-2);
+  transform: translateY(-2px);
+}
+
+/* ── BUTTONS ──────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.15s;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
+.btn-ghost { background: transparent; color: var(--ink-2); border: 1.5px solid var(--border-2); }
+.btn-ghost:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+
+/* ── FOOTER ───────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+footer p {
+  font-size: 13px;
+  color: var(--ink-4);
+  font-family: var(--font-mono);
+}
+
+@media (max-width: 768px) {
+  .nav-links a { font-size: 13px; padding: 7px 10px; }
+  .page-inner { padding-top: 52px; padding-bottom: 52px; }
+}
+@media (max-width: 560px) {
+  .nav-links a { font-size: 12px; padding: 6px 8px; letter-spacing: 0; }
+}

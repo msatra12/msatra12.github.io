@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience — Moe Satra</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.exp-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.exp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 2.25rem;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.exp-card:hover { box-shadow: var(--shadow-md); border-color: var(--border-2); }
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.exp-role { font-size: 1.15rem; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; }
+.exp-date {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-4);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.exp-org { font-size: 14px; font-weight: 500; color: var(--blue); margin-bottom: 1.4rem; }
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.exp-bullets li {
+  font-size: 15px;
+  color: var(--ink-2);
+  padding-left: 1.4rem;
+  position: relative;
+  line-height: 1.65;
+}
+.exp-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+.exp-bullets li strong { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">moe.satra</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="experience.html" class="active">Experience</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="page-inner">
+    <div class="eyebrow">Career</div>
+    <h1 class="page-title">Experience</h1>
+
+    <div class="exp-list">
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-role">IT Specialist</div>
+          <div class="exp-date">Apr 2024 – Jun 2026</div>
+        </div>
+        <div class="exp-org">Algoma University</div>
+        <ul class="exp-bullets">
+          <li>Supported <strong>2,000+ users</strong> with account provisioning, MFA activation, and access management — ensuring role-appropriate access and prompt revocation on offboarding.</li>
+          <li>Maintained <strong>90%+ SLA compliance</strong> resolving 20–30 daily service requests via Freshworks across hardware, software, networking, AV, and account issues.</li>
+          <li>Managed <strong>300+ endpoints</strong> using Microsoft Intune, cutting device deployment time by ~25% through standardized provisioning workflows, policy automation, and software deployment templates.</li>
+          <li>Supported security compliance through MFA setup and enforcement, RBAC provisioning and revocation, and ensuring devices met institutional requirements through Intune.</li>
+          <li>Troubleshot DNS, DHCP, and VPN issues across multiple campus sites; escalated complex infrastructure problems with clear documentation to accelerate resolution.</li>
+          <li>Tracked IT asset inventory and maintained hardware/software database for directors and staff, supporting refresh and lifecycle planning.</li>
+          <li>Authored and maintained technical documentation and ITSM knowledge base articles for incident resolution and process consistency across the team.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-role">IT Service Desk</div>
+          <div class="exp-date">Sep 2023 – Apr 2024</div>
+        </div>
+        <div class="exp-org">Algoma University</div>
+        <ul class="exp-bullets">
+          <li>Provided Tier 1 &amp; 2 support to a <strong>500–1,000 user environment</strong> via Freshworks, resolving hardware, software, account, and connectivity issues across Windows, Mac, and mobile endpoints.</li>
+          <li>Supported end-user onboarding and offboarding — provisioning accounts, configuring devices, and assigning M365 access so new staff had working setups from Day 1.</li>
+          <li>Configured and maintained Windows and macOS workstations, printers, and peripherals across campus.</li>
+          <li>Imaged and configured <strong>75–110 devices each semester</strong> across Windows and macOS, deploying and validating 8–10 applications per device; performed hands-on hardware repairs on laptops, desktops, printers, and AV equipment.</li>
+          <li>Authored ITSM process articles that reduced Tier 2/3 escalation times and gave the team reusable, standardized resources.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Moe Satra</p>
+
+</footer>
+</body>
+</html>
